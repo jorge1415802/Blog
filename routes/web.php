@@ -13,3 +13,4 @@
 Route::get('/','PostController@index');
 Route::get('/post','PostController@index');
 Route::get('/post/crear','PostController@crear');
+Route::post('/post/crear','PostController@guardar');

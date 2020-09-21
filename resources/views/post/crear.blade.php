@@ -1,7 +1,7 @@
 @extends("layout")
 @section('contenido')
     <div class="col-6 mx-auto">
-        <form action="post" enctype="multipart/formdata">
+        <form action="/post/crear" method="post" enctype="multipart/formdata">
             @csrf
             <div class="form-group">
                 <h3>Crear nuevo post</h3>
@@ -12,7 +12,7 @@
             </div>
             <div class="form-group">
                 <label for="contenido">Contenido</label>
-                <input type="text" name="contenido" id="contenido" placeholder="Contenido" class="form-control">
+                <textarea name="contenido" id="contenido" cols="30" rows="10" class="form-control"></textarea>
             </div>
             <div class="form-group">
                 <label for="imagen">Imagen</label>

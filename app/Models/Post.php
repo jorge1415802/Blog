@@ -8,5 +8,5 @@ class Post extends Model
 {
     protected $table = 'Posts';
     public $timestamps = false;
-    protected $filelable = ['Titulo','Contenido','Categoria','Imagen'];
+    protected $fillable = ['Titulo','Contenido','Categoria','Imagen'];
 }
