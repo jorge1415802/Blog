@@ -1,8 +1,8 @@
 @extends("layout")
 @section('contenido')
     <div class="col-6 mx-auto">
-        <form action="{{ route('post.update', ['id'=> $post->Id]) }}" method="post" enctype="multipart/formdata">
-            @csrf @method('PATCH')
+        <form action="{{ route('post.delete', ['id'=> $post->Id]) }}" method="post" enctype="multipart/formdata">
+            @csrf @method('delete')
             <div class="form-group">
                 <h3>Modificar post</h3>
             </div>
@@ -23,7 +23,7 @@
                 <input type="text" name="categoria" id="categoria" placeholder="Categoria" class="form-control" value="{{$post->Categoria}}">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-primary">Modificar</button>
+                <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                 <a href="/" class="btn btn-outline-warning">Cancelar</a>
             </div>
         </form>

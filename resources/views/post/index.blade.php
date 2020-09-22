@@ -21,8 +21,8 @@
                     </div>
                     <br>
                     <a href="{{ route('post.mostrar', ['id'=> $valor->Id]) }}" class="btn btn-outline-primary">Ver</a>
-                    <a href="{{ route('post.update', ['id'=> $valor->Id]) }}" class="btn btn-outline-warning">Editar</a>
-                    <a href="{{ route('post.delete', ['id'=> $valor->Id]) }}" class="btn btn-outline-danger">Borrar</a>
+                    <a href="{{ route('post.editar', ['id'=> $valor->Id]) }}" class="btn btn-outline-warning">Editar</a>
+                    <a href="{{ route('post.borrar', ['id'=> $valor->Id]) }}" class="btn btn-outline-danger">Borrar</a>
                 </div>
             </div>
         @endforeach

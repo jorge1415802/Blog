@@ -36,18 +36,34 @@ class PostController extends Controller
 
     public function mostrar(Request $request,$id){
         $post = DB::table('Posts')->find($id);
-
+        //$post = Post::all()->find($id);
+        //$post = $posts->find($id);
         return view('post.mostrar',compact("post"));
     }
 
-    public function update(Request $request,$id){
+    public function editar(Request $request,$id){
         $post = DB::table('Posts')->find($id);
         return view('post.update',compact("post"));
     }
 
+    public function update(Request $request,$id){
+        $post = DB::table('Posts')->where('Id',$id)->update([
+            "Titulo" => $request["titulo"],
+            "Contenido" => $request["contenido"],
+            "Imagen" => $request["imagen"],
+            "Categoria"=> $request["categoria"]
+        ]);
+
+        return redirect("/post");
+    }
+
+    public function borrar(Request $request,$id){
+        $post = DB::table('Posts')->find($id);
+        return view('post.delete',compact("post"));
+    }
+
     public function delete(Request $request,$id){
         $post = DB::table('Posts')->where('Id','=',$id)->delete();
-
         return redirect("/post");
     }
 }
