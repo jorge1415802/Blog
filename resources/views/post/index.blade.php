@@ -2,6 +2,7 @@
 @section("contenido")
     <div class="container">
         @foreach($post as $valor)
+        <br>
             <div class="card">
                 <div class="card-header">
                     <h4>{{$valor->Titulo}}</h4>
@@ -17,12 +18,18 @@
                     </div>
                     <div>
                         Fecha: {{$valor->FechaCreacion}}
-
                     </div>
-
+                    <br>
+                    <a href="{{ route('post.mostrar', ['id'=> $valor->Id]) }}" class="btn btn-outline-primary">Ver</a>
+                    <a href="{{ route('post.update', ['id'=> $valor->Id]) }}" class="btn btn-outline-warning">Editar</a>
+                    <a href="{{ route('post.delete', ['id'=> $valor->Id]) }}" class="btn btn-outline-danger">Borrar</a>
                 </div>
             </div>
         @endforeach
+        <br>
+        <div>
+            <a href="/post/crear" class="btn btn-outline-primary">Crear Nuevo Post</a>
+        </div>
     </div>
 
 @endsection

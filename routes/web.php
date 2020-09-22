@@ -14,3 +14,6 @@ Route::get('/','PostController@index');
 Route::get('/post','PostController@index');
 Route::get('/post/crear','PostController@crear');
 Route::post('/post/crear','PostController@guardar');
+Route::get('/post/mostrar/{id}','PostController@mostrar')->name('post.mostrar');
+Route::put('/post/update/{id}','PostController@update')->name('post.update');
+Route::delete('/post/update/{id}','PostController@delete')->name('post.delete');

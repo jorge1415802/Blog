@@ -4,11 +4,11 @@
         <form action="/post/crear" method="post" enctype="multipart/formdata">
             @csrf
             <div class="form-group">
-                <h3>Crear nuevo post</h3>
+                <h3>Modificar post</h3>
             </div>
             <div class="form-group">
                 <label for="titulo">Titulo</label>
-                <input type="text" name="titulo" id="titulo" placeholder="Titulo" class="form-control">
+                <input type="text" name="titulo" id="titulo" placeholder="Titulo" class="form-control" value="{{$post->titulo}}">
             </div>
             <div class="form-group">
                 <label for="contenido">Contenido</label>

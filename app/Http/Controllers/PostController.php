@@ -33,4 +33,21 @@ class PostController extends Controller
         }
 
     }
+
+    public function mostrar(Request $request,$id){
+        $post = DB::table('Posts')->find($id);
+
+        return view('post.mostrar',compact("post"));
+    }
+
+    public function update(Request $request,$id){
+        $post = DB::table('Posts')->find($id);
+        return view('post.update',compact("post"));
+    }
+
+    public function delete(Request $request,$id){
+        $post = DB::table('Posts')->where('Id','=',$id)->delete();
+
+        return redirect("/post");
+    }
 }
